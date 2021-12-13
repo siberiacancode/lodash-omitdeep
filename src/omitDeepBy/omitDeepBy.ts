@@ -13,10 +13,10 @@ import { PropertyName, PartialObject, ValueKeyIteratee, NumericDictionary, Dicti
  * @returns Returns the new object.
  * @example
  *
- * var object = { 'a': 1, 'b': 2, 'c': { 'a': 1, 'b': 2 } };
+ * var object = { 'a': 1, 'b': null, 'c': { 'a': 1, 'b': null } };
  *
  * omitByDeep(object, _.isNil);
- * // => { a: 1, c: { a: 1 } }
+ * // => { 'a': 1, 'c': { 'a': 1 } }
  */
 
 function omitByDeep<T>(object: Dictionary<T> | null | undefined, predicate?: ValueKeyIteratee<T>): Dictionary<T>;
