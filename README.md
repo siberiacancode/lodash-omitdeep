@@ -7,7 +7,7 @@ lodash-omitdeep allows you to execute lodash omit, omitBy functions recursively.
 Install with [npm](https://www.npmjs.com/)
 
 ```sh
-$ npm i lodash-omitdeep- --save
+$ npm i lodash-omitdeep --save
 ```
 Install with [yarn](https://yarnpkg.com/)
 
