@@ -1,6 +1,6 @@
 {
   "name": "lodash-omitdeep",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Lodash omitDeep/omitByDeep object key/value recursively",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
