@@ -17,14 +17,14 @@
     "object",
     "deep"
   ],
-  "homepage": "https://github.com/hwapedro/lodash-omitdeep",
-  "author": "Dmitriy Babin (https://github.com/hwapedro)",
+  "homepage": "https://github.com/debabin/lodash-omitdeep",
+  "author": "Dmitriy Babin (https://github.com/debabin)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hwapedro/lodash-omitdeep"
+    "url": "https://github.com/debabin/lodash-omitdeep"
   },
   "bugs": {
-    "url": "https://github.com/hwapedro/lodash-omitdeep/issues"
+    "url": "https://github.com/debabin/lodash-omitdeep/issues"
   },
   "files": [
     "lib/**/*"
