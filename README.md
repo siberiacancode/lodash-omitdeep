@@ -37,9 +37,9 @@ import { omitDeepBy } from 'lodash-omitdeep';
 import isNil from 'lodash/isNil';
 import isNumber from 'lodash/isNumber';
 
-omitByDeep({ a: 'a', b: null, c: { b: 'b', d: { b: 'b', f: null } } }, isNil);
+omitDeepBy({ a: 'a', b: null, c: { b: 'b', d: { b: 'b', f: null } } }, isNil);
 //=> {a: "a", c: {b: "b", d: {b: "b"}}}
-omitByDeep({ a: 2, b: 'b', c: { b: 4, d: { b: 1, f: 'f' } } }, isNumber);
+omitDeepBy({ a: 2, b: 'b', c: { b: 4, d: { b: 1, f: 'f' } } }, isNumber);
 //=> {b: "b", c: {d: {f: "f"}}}
 ```
 
