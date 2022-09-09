@@ -30,7 +30,7 @@ omitDeep({ a: 'a', b: 'b', c: { b: 'b', d: { b: 'b', f: 'f' } } }, ['a', 'b']);
 //=> {c: {d: {f: "f"}}}
 ```
 
-### omitByDeep
+### omitDeepBy
 
 ```js
 import { omitDeepBy } from 'lodash-omitdeep';
