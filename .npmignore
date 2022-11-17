@@ -1,5 +1,5 @@
 src
+jestconfig.json
 tsconfig.json
-tsconfig.prod.json
 tslint.json
 .prettierrc
