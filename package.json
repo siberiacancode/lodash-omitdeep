@@ -1,6 +1,6 @@
 {
   "name": "lodash-omitdeep",
-  "version": "1.0.12",
+  "version": "1.0.14",
   "description": "Lodash omitDeep/omitByDeep object key/value recursively",
   "author": {
     "name": "SIBERIA CAN CODE 🧊",
@@ -40,7 +40,7 @@
     "lib/**/*"
   ],
   "scripts": {
-    "build": "tsc --project tsconfig.prod.json",
+    "build": "tsc --project tsconfig.json",
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
     "version": "npm run format && git add -A src",
