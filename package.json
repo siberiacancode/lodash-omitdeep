@@ -38,7 +38,7 @@
     "url": "https://github.com/siberiacancode/lodash-omitdeep/issues"
   },
   "files": [
-    "lib/**/*"
+    "dist/**/*"
   ],
   "scripts": {
     "build": "rollup -c --bundleConfigAsCjs",
