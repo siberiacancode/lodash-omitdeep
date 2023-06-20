@@ -1,4 +1,4 @@
-# lodash-omitdeep
+# ♻️ Lodash Omit Deep
 
 > Lodash omitDeep/omitDeepBy object key/value recursively
 
@@ -6,19 +6,23 @@ lodash-omitdeep allows you to execute lodash omit, omitBy functions recursively.
 
 ## Install
 
-Install with [npm](https://www.npmjs.com/)
+Install with [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
-```sh
+```bash
 $ npm i lodash-omitdeep --save
-```
-
-Install with [yarn](https://yarnpkg.com/)
-
-```sh
+# or
 $ yarn add lodash-omitdeep
 ```
 
 ## Usage
+
+Install **♻️ Lodash Omit Deep** with [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+
+```bash
+$ npm i lodash-omitdeep --save
+# or
+$ yarn add lodash-omitdeep
+```
 
 ### omitDeep
 
@@ -43,14 +47,18 @@ omitDeepBy({ a: 2, b: 'b', c: { b: 4, d: { b: 1, f: 'f' } } }, isNumber);
 //=> {b: "b", c: {d: {f: "f"}}}
 ```
 
-## Contributing
+## ✨ Contributors
 
-Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/debabin/lodash-omitdeep/issues/new)
-
-## Author
-
-- [github/debabin](https://github.com/debabin)
-
-## License
-
-Released under the MIT license.
+<table>
+<tr>
+    <td align="center" style="word-wrap: break-word; width: 100.0; height: 100.0">
+        <a href="https://github.com/debabin">
+            <img src="https://avatars.githubusercontent.com/u/45297354?v=4"
+            width="100;"  
+            alt="debabin" />
+            <br />
+            <sub style="font-size:13px"><b>☄️ debabin</b></sub>
+        </a>
+    </td>
+  </tr>
+</table>

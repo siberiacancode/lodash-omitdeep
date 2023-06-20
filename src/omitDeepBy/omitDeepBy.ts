@@ -5,8 +5,8 @@ import type {
   NumericDictionary,
   Dictionary
 } from 'lodash';
-import omitBy from 'lodash.omitby';
 import isPlainObject from 'lodash.isplainobject';
+import omitBy from 'lodash.omitby';
 
 /**
  * The opposite of `_.pickBy`; this method creates an object composed of the
@@ -49,6 +49,7 @@ function omitByDeep(object: any, cb: any) {
     }
 
     const temp = {};
+    // eslint-disable-next-line no-restricted-syntax
     for (const [key, value] of Object.entries<{
       [x: string]: PropertyName | object;
     }>(object)) {

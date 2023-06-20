@@ -1,7 +1,11 @@
 import type { Many, PropertyName, PartialObject } from 'lodash';
-import omit from 'lodash.omit';
-import isPlainObject from 'lodash.isplainobject';
 import isNil from 'lodash.isnil';
+import isPlainObject from 'lodash.isplainobject';
+import omit from 'lodash.omit';
+
+function needOmit(value: any): boolean {
+  return !isNil(value) && (isPlainObject(value) || Array.isArray(value));
+}
 
 /**
  * The opposite of `_.pick`; this method creates an object composed of the
@@ -43,6 +47,7 @@ function omitDeep(object: any, ...paths: any) {
     }
 
     const temp = {};
+    // eslint-disable-next-line no-restricted-syntax
     for (const [key, value] of Object.entries<{
       [x: string]: PropertyName | object;
     }>(object)) {
@@ -52,10 +57,6 @@ function omitDeep(object: any, ...paths: any) {
   }
 
   return omitDeepOnOwnProps(object);
-}
-
-function needOmit(value: any): boolean {
-  return !isNil(value) && (isPlainObject(value) || Array.isArray(value));
 }
 
 export default omitDeep;
