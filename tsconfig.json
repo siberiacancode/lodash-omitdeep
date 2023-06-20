@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
     "outDir": "dist",
-    "declaration": true,
+    "declaration": false,
     "target": "esnext",
+    "jsx": "react",
     "lib": ["dom", "es2021"],
     "skipLibCheck": true,
     "esModuleInterop": true,
