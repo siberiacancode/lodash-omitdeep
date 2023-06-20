@@ -22,7 +22,7 @@ export default [
       }
     ],
     external: Object.keys(pkg.peerDependencies),
-    plugins: [resolve(), commonjs(), typescript({ tsconfig: './tsconfig.json' }), terser()]
+    plugins: [resolve(), commonjs(), typescript({ tsconfig: './tsconfig.prod.json' }), terser()]
   },
   {
     input: 'src/index.ts',

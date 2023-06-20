@@ -13,7 +13,7 @@
     "moduleResolution": "node",
     "isolatedModules": true,
     "resolveJsonModule": true,
-    "sourceMap": false,
+    "sourceMap": true,
     "newLine": "lf",
     "noUnusedLocals": true,
     "noUnusedParameters": true,

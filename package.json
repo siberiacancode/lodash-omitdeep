@@ -50,7 +50,8 @@
     "lint": "eslint . --ext ts --ext tsx --no-error-on-unmatched-pattern",
     "format": "prettier --write src/**/*.{ts,tsx}",
     "type": "tsc --noEmit",
-    "pretty": "yarn type && yarn format && yarn lint --fix"
+    "pretty": "yarn type && yarn format && yarn lint --fix",
+    "test": "jest --config jestconfig.json"
   },
   "lint-staged": {
     "*.js": "yarn format",
