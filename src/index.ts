@@ -1,4 +1,2 @@
-import omitDeep from './omitDeep/omitDeep';
-import omitByDeep from './omitDeepBy/omitDeepBy';
-
-export default { omitDeep, omitByDeep };
+export * from './omitDeep/omitDeep';
+export * from './omitDeepBy/omitDeepBy';

@@ -25,27 +25,26 @@ import omitBy from 'lodash.omitby';
  * // => { 'a': 1, 'c': { 'a': 1 } }
  */
 
-function omitByDeep<T>(
-  object: Dictionary<T> | null | undefined,
-  predicate?: ValueKeyIteratee<T>
-): Dictionary<T>;
-function omitByDeep<T>(
-  object: NumericDictionary<T> | null | undefined,
-  predicate?: ValueKeyIteratee<T>
-): NumericDictionary<T>;
-function omitByDeep<T extends object>(
-  object: T | null | undefined,
-  predicate: ValueKeyIteratee<T[keyof T]>
-): PartialObject<T>;
+interface OmitDeepBy {
+  <T>(object: Dictionary<T> | null | undefined, predicate?: ValueKeyIteratee<T>): Dictionary<T>;
+  <T>(
+    object: NumericDictionary<T> | null | undefined,
+    predicate?: ValueKeyIteratee<T>
+  ): NumericDictionary<T>;
+  <T extends object>(
+    object: T | null | undefined,
+    predicate: ValueKeyIteratee<T[keyof T]>
+  ): PartialObject<T>;
+}
 
-function omitByDeep(object: any, cb: any) {
+export const omitDeepBy: OmitDeepBy = (object: any, cb: any) => {
   function omitByDeepByOnOwnProps(object: any) {
     if (!Array.isArray(object) && !isPlainObject(object)) {
       return object;
     }
 
     if (Array.isArray(object)) {
-      return object.map((element) => omitByDeep(element, cb));
+      return object.map((element) => omitDeepBy(element, cb));
     }
 
     const temp = {};
@@ -53,12 +52,12 @@ function omitByDeep(object: any, cb: any) {
     for (const [key, value] of Object.entries<{
       [x: string]: PropertyName | object;
     }>(object)) {
-      (temp as any)[key] = omitByDeep(value, cb);
+      (temp as any)[key] = omitDeepBy(value, cb);
     }
     return omitBy(temp, cb);
   }
 
   return omitByDeepByOnOwnProps(object);
-}
+};
 
-export default omitByDeep;
+export default omitDeepBy;

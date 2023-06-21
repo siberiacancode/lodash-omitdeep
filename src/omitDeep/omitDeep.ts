@@ -23,20 +23,22 @@ function needOmit(value: any): boolean {
  * omitDeep(object, ['b', 'a']);
  * // => { 'c': {} }
  */
-function omitDeep<T extends object, K extends PropertyName[]>(
-  object: T | null | undefined,
-  ...paths: K
-): Pick<T, Exclude<keyof T, K[number]>>;
-function omitDeep<T extends object, K extends keyof T>(
-  object: T | null | undefined,
-  ...paths: Many<K>[]
-): Omit<T, K>;
-function omitDeep<T extends object>(
-  object: T | null | undefined,
-  ...paths: Many<PropertyName>[]
-): PartialObject<T>;
+interface OmitDeep {
+  <T extends object, K extends PropertyName[]>(object: T | null | undefined, ...paths: K): Pick<
+    T,
+    Exclude<keyof T, K[number]>
+  >;
+  <T extends object, K extends keyof T>(object: T | null | undefined, ...paths: Many<K>[]): Omit<
+    T,
+    K
+  >;
+  <T extends object>(
+    object: T | null | undefined,
+    ...paths: Many<PropertyName>[]
+  ): PartialObject<T>;
+}
 
-function omitDeep(object: any, ...paths: any) {
+export const omitDeep: OmitDeep = (object: any, ...paths: any) => {
   function omitDeepOnOwnProps(object: any) {
     if (!Array.isArray(object) && !isPlainObject(object)) {
       return object;
@@ -57,6 +59,6 @@ function omitDeep(object: any, ...paths: any) {
   }
 
   return omitDeepOnOwnProps(object);
-}
+};
 
 export default omitDeep;

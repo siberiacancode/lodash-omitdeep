@@ -1,4 +1,4 @@
-import omitDeepBy from '../omitDeepBy/omitDeepBy';
+import { omitDeepBy } from '../omitDeepBy/omitDeepBy';
 
 test('omitDeep', () => {
   const object = { a: 1, b: 2, c: [{ d: 1 }] };

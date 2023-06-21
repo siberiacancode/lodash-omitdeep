@@ -1,4 +1,4 @@
-import omitDeep from '../omitDeep/omitDeep';
+import { omitDeep } from '../omitDeep/omitDeep';
 
 test('omitDeep', () => {
   const object = { a: 'a', b: 'b' };
