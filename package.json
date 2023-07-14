@@ -49,7 +49,7 @@
     "prepare": "husky install && npm run build",
     "postversion": "git push && git push --tags",
     "lint": "eslint . --ext ts --ext tsx --no-error-on-unmatched-pattern",
-    "format": "prettier --write src/**/*.{ts,tsx}",
+    "format": "prettier --write src/**/*.ts",
     "type": "tsc --noEmit",
     "pretty": "yarn type && yarn format && yarn lint --fix",
     "test": "jest --config jestconfig.json"
