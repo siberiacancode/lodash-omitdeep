@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "declaration": false,
     "target": "esnext",
     "jsx": "react",
     "lib": ["dom", "es2021"],
