@@ -14,7 +14,7 @@ function needOmit(value: any): boolean {
  * @category Function
  * @param object The source object.
  * @param [paths] The property names to omit, specified
- *  individually or in arrays..
+ *  individually or in arrays.
  * @returns Returns the new object.
  * @example
  *

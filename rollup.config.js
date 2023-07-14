@@ -6,6 +6,9 @@ import dts from 'rollup-plugin-dts';
 
 const pkg = require('./package.json');
 
+const banner = `/* @license ${pkg.name} v${pkg.version} */`;
+
+/** @type {import('rollup').RollupOptions[]} */
 export default [
   {
     input: 'src/index.ts',
@@ -13,12 +16,15 @@ export default [
       {
         file: pkg.main,
         format: 'cjs',
-        sourcemap: true
+        sourcemap: true,
+        banner
       },
       {
-        file: pkg.module,
+        dir: pkg.module.replace('/index.js', ''),
+        preserveModules: true,
         format: 'esm',
-        sourcemap: true
+        sourcemap: true,
+        banner
       }
     ],
     external: Object.keys(pkg.peerDependencies),
