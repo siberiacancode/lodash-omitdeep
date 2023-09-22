@@ -1,9 +1,9 @@
 import type {
-  PropertyName,
-  PartialObject,
-  ValueKeyIteratee,
+  Dictionary,
   NumericDictionary,
-  Dictionary
+  PartialObject,
+  PropertyName,
+  ValueKeyIteratee
 } from 'lodash';
 import isPlainObject from 'lodash.isplainobject';
 import omitBy from 'lodash.omitby';

@@ -1,4 +1,4 @@
-import type { Many, PropertyName, PartialObject } from 'lodash';
+import type { Many, PartialObject, PropertyName } from 'lodash';
 import isNil from 'lodash.isnil';
 import isPlainObject from 'lodash.isplainobject';
 import omit from 'lodash.omit';
@@ -24,14 +24,14 @@ function needOmit(value: any): boolean {
  * // => { 'c': {} }
  */
 interface OmitDeep {
-  <T extends object, K extends PropertyName[]>(object: T | null | undefined, ...paths: K): Pick<
-    T,
-    Exclude<keyof T, K[number]>
-  >;
-  <T extends object, K extends keyof T>(object: T | null | undefined, ...paths: Many<K>[]): Omit<
-    T,
-    K
-  >;
+  <T extends object, K extends PropertyName[]>(
+    object: T | null | undefined,
+    ...paths: K
+  ): Pick<T, Exclude<keyof T, K[number]>>;
+  <T extends object, K extends keyof T>(
+    object: T | null | undefined,
+    ...paths: Many<K>[]
+  ): Omit<T, K>;
   <T extends object>(
     object: T | null | undefined,
     ...paths: Many<PropertyName>[]
