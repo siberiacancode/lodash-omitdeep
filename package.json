@@ -61,6 +61,12 @@
       "eslint --no-error-on-unmatched-pattern --fix"
     ]
   },
+  "peerDependencies": {
+    "lodash.isnil": "^4.0.0",
+    "lodash.isplainobject": "^4.0.6",
+    "lodash.omit": "^4.5.0",
+    "lodash.omitby": "^4.6.0"
+  },
   "dependencies": {
     "lodash.isnil": "^4.0.0",
     "lodash.isplainobject": "^4.0.6",
