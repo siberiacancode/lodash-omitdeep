@@ -74,7 +74,10 @@
     "lodash.omitby": "^4.6.0"
   },
   "devDependencies": {
-    "@siberiacancode/builder": "^1.0.2",
+    "@rollup/plugin-commonjs": "^25.0.4",
+    "@rollup/plugin-node-resolve": "^15.2.1",
+    "@rollup/plugin-terser": "^0.4.3",
+    "@rollup/plugin-typescript": "^11.1.3",
     "@siberiacancode/eslint": "^1.0.2",
     "@siberiacancode/jest": "^1.0.1",
     "@siberiacancode/prettier": "^1.0.0",
@@ -85,6 +88,8 @@
     "@types/lodash.omitby": "^4.6.7",
     "husky": "^8.0.1",
     "lint-staged": "^14.0.1",
+    "rollup": "^3.29.2",
+    "rollup-plugin-dts": "^6.0.2",
     "shx": "^0.3.4",
     "ts-jest": "^29.1.1",
     "typescript": "^5.2.2"
