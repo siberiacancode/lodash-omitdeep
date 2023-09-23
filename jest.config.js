@@ -1,9 +1,10 @@
+const { jest } = require('@siberiacancode/jest');
+
 /** @type {import('ts-jest').JestConfigWithTsJest} */
 const jestConfig = {
-  rootDir: './',
+  ...jest,
   preset: 'ts-jest',
-  testEnvironment: 'node',
-  collectCoverage: true,
-  coverageDirectory: 'coverage'
+  testEnvironment: 'node'
 };
+
 module.exports = jestConfig;
