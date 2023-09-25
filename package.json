@@ -74,7 +74,7 @@
     "lodash.omitby": "^4.6.0"
   },
   "devDependencies": {
-    "@siberiacancode/builder": "^1.1.0",
+    "@siberiacancode/builder": "^1.2.0",
     "@siberiacancode/eslint": "^1.0.2",
     "@siberiacancode/jest": "^1.0.1",
     "@siberiacancode/prettier": "^1.0.0",
