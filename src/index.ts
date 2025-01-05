@@ -1,2 +1,2 @@
-export * from './omitDeep/omitDeep';
-export * from './omitDeepBy/omitDeepBy';
+export { omitDeep } from './omitDeep/omitDeep';
+export { omitDeepBy } from './omitDeepBy/omitDeepBy';

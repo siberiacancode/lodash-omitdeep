@@ -1,10 +1,25 @@
 import type { Many, PartialObject, PropertyName } from 'lodash';
+
 import isNil from 'lodash.isnil';
 import isPlainObject from 'lodash.isplainobject';
 import omit from 'lodash.omit';
 
-function needOmit(value: any): boolean {
-  return !isNil(value) && (isPlainObject(value) || Array.isArray(value));
+export const needOmit = (value: any) =>
+  !isNil(value) && (isPlainObject(value) || Array.isArray(value));
+
+interface OmitDeep {
+  <T extends object, K extends PropertyName[]>(
+    object: T | null | undefined,
+    ...paths: K
+  ): Pick<T, Exclude<keyof T, K[number]>>;
+  <T extends object, K extends keyof T>(
+    object: T | null | undefined,
+    ...paths: Many<K>[]
+  ): Omit<T, K>;
+  <T extends object>(
+    object: T | null | undefined,
+    ...paths: Many<PropertyName>[]
+  ): PartialObject<T>;
 }
 
 /**
@@ -23,21 +38,6 @@ function needOmit(value: any): boolean {
  * omitDeep(object, ['b', 'a']);
  * // => { 'c': {} }
  */
-interface OmitDeep {
-  <T extends object, K extends PropertyName[]>(
-    object: T | null | undefined,
-    ...paths: K
-  ): Pick<T, Exclude<keyof T, K[number]>>;
-  <T extends object, K extends keyof T>(
-    object: T | null | undefined,
-    ...paths: Many<K>[]
-  ): Omit<T, K>;
-  <T extends object>(
-    object: T | null | undefined,
-    ...paths: Many<PropertyName>[]
-  ): PartialObject<T>;
-}
-
 export const omitDeep: OmitDeep = (object: any, ...paths: any) => {
   function omitDeepOnOwnProps(object: any) {
     if (!Array.isArray(object) && !isPlainObject(object)) {
@@ -49,9 +49,9 @@ export const omitDeep: OmitDeep = (object: any, ...paths: any) => {
     }
 
     const temp = {};
-    // eslint-disable-next-line no-restricted-syntax
+
     for (const [key, value] of Object.entries<{
-      [x: string]: PropertyName | object;
+      [x: string]: object | PropertyName;
     }>(object)) {
       (temp as any)[key] = needOmit(value) ? omitDeep(value, ...paths) : value;
     }
@@ -60,5 +60,3 @@ export const omitDeep: OmitDeep = (object: any, ...paths: any) => {
 
   return omitDeepOnOwnProps(object);
 };
-
-export default omitDeep;

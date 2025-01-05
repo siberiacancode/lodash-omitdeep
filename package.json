@@ -1,8 +1,8 @@
 {
   "name": "lodash-omitdeep",
+  "type": "module",
   "version": "1.3.5",
   "description": "lodash omitDeep/omitByDeep object key/value recursively",
-  "sideEffects": false,
   "author": {
     "name": "SIBERIA CAN CODE 🧊",
     "url": "https://github.com/siberiacancode"
@@ -14,9 +14,14 @@
     }
   ],
   "license": "MIT",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/index.d.ts",
+  "homepage": "https://github.com/siberiacancode/lodash-omitdeep",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/siberiacancode/lodash-omitdeep"
+  },
+  "bugs": {
+    "url": "https://github.com/siberiacancode/lodash-omitdeep/issues"
+  },
   "keywords": [
     "lodash",
     "omit",
@@ -30,36 +35,21 @@
     "object",
     "deep"
   ],
-  "homepage": "https://github.com/siberiacancode/lodash-omitdeep",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/siberiacancode/lodash-omitdeep"
-  },
-  "bugs": {
-    "url": "https://github.com/siberiacancode/lodash-omitdeep/issues"
-  },
+  "sideEffects": false,
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist/**/*"
   ],
   "scripts": {
     "build": "shx rm -rf dist && rollup -c --bundleConfigAsCjs",
-    "prepublishOnly": "npm test && npm run lint",
-    "preversion": "npm run lint",
-    "version": "npm run format && git add -A src",
-    "prepare": "husky install && npm run build",
-    "postversion": "git push && git push --tags",
-    "lint": "eslint . --ext ts --no-error-on-unmatched-pattern --fix",
-    "format": "prettier --write **/*.{ts,js}",
+    "lint": "eslint . --fix",
     "type": "tsc --noEmit",
-    "pretty": "yarn type && yarn format && yarn lint",
-    "test": "jest"
-  },
-  "lint-staged": {
-    "*.js": "prettier --write",
-    "*.ts": [
-      "prettier --write",
-      "eslint --no-error-on-unmatched-pattern --fix"
-    ]
+    "format": "prettier --write .",
+    "pretty": "yarn type && yarn lint && yarn format",
+    "prepare": "husky",
+    "unit-test": "vitest"
   },
   "peerDependencies": {
     "lodash.isnil": "^4.0.0",
@@ -74,19 +64,27 @@
     "lodash.omitby": "^4.6.0"
   },
   "devDependencies": {
-    "@siberiacancode/builder": "^1.2.0",
-    "@siberiacancode/eslint": "^1.0.2",
-    "@siberiacancode/jest": "^1.0.1",
-    "@siberiacancode/prettier": "^1.0.0",
-    "@types/jest": "^29.5.5",
-    "@types/lodash.isnil": "^4.0.7",
-    "@types/lodash.isplainobject": "^4.0.7",
-    "@types/lodash.omit": "^4.5.7",
-    "@types/lodash.omitby": "^4.6.7",
-    "husky": "^8.0.1",
-    "lint-staged": "^14.0.1",
+    "@siberiacancode/builder": "^1.3.17",
+    "@siberiacancode/eslint": "^2.6.0",
+    "@siberiacancode/prettier": "^1.1.1",
+    "@siberiacancode/vitest": "^1.2.4",
+    "@types/lodash.isnil": "^4.0.9",
+    "@types/lodash.isplainobject": "^4.0.9",
+    "@types/lodash.omit": "^4.5.9",
+    "@types/lodash.omitby": "^4.6.9",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.3.0",
     "shx": "^0.3.4",
-    "ts-jest": "^29.1.1",
-    "typescript": "^5.2.2"
+    "typescript": "^5.7.2"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   }
 }
