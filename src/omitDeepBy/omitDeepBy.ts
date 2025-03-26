@@ -6,8 +6,7 @@ import type {
   ValueKeyIteratee
 } from 'lodash';
 
-import isPlainObject from 'lodash.isplainobject';
-import omitBy from 'lodash.omitby';
+import { isPlainObject, omitBy } from 'lodash';
 
 interface OmitDeepBy {
   <T>(object: Dictionary<T> | null | undefined, predicate?: ValueKeyIteratee<T>): Dictionary<T>;

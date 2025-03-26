@@ -1,8 +1,6 @@
 import type { Many, PartialObject, PropertyName } from 'lodash';
 
-import isNil from 'lodash.isnil';
-import isPlainObject from 'lodash.isplainobject';
-import omit from 'lodash.omit';
+import { isNil, isPlainObject, omit } from 'lodash';
 
 export const needOmit = (value: any) =>
   !isNil(value) && (isPlainObject(value) || Array.isArray(value));
