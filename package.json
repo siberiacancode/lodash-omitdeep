@@ -1,7 +1,7 @@
 {
   "name": "lodash-omitdeep",
   "type": "module",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "lodash omitDeep/omitByDeep object key/value recursively",
   "author": {
     "name": "SIBERIA CAN CODE 🧊",
