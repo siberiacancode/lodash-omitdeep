@@ -1,9 +1,9 @@
 import type { Many, PartialObject, PropertyName } from 'lodash';
 
-import { isNil, isPlainObject, omit } from 'lodash';
+import lodash from 'lodash';
 
 export const needOmit = (value: any) =>
-  !isNil(value) && (isPlainObject(value) || Array.isArray(value));
+  !lodash.isNil(value) && (lodash.isPlainObject(value) || Array.isArray(value));
 
 interface OmitDeep {
   <T extends object, K extends PropertyName[]>(
@@ -38,7 +38,7 @@ interface OmitDeep {
  */
 export const omitDeep: OmitDeep = (object: any, ...paths: any) => {
   function omitDeepOnOwnProps(object: any) {
-    if (!Array.isArray(object) && !isPlainObject(object)) {
+    if (!Array.isArray(object) && !lodash.isPlainObject(object)) {
       return object;
     }
 
@@ -53,7 +53,7 @@ export const omitDeep: OmitDeep = (object: any, ...paths: any) => {
     }>(object)) {
       (temp as any)[key] = needOmit(value) ? omitDeep(value, ...paths) : value;
     }
-    return omit(temp, ...paths);
+    return lodash.omit(temp, ...paths);
   }
 
   return omitDeepOnOwnProps(object);

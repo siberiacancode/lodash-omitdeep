@@ -6,7 +6,7 @@ import type {
   ValueKeyIteratee
 } from 'lodash';
 
-import { isPlainObject, omitBy } from 'lodash';
+import lodash from 'lodash';
 
 interface OmitDeepBy {
   <T>(object: Dictionary<T> | null | undefined, predicate?: ValueKeyIteratee<T>): Dictionary<T>;
@@ -38,7 +38,7 @@ interface OmitDeepBy {
  */
 export const omitDeepBy: OmitDeepBy = (object: any, cb: any) => {
   function omitByDeepByOnOwnProps(object: any) {
-    if (!Array.isArray(object) && !isPlainObject(object)) {
+    if (!Array.isArray(object) && !lodash.isPlainObject(object)) {
       return object;
     }
 
@@ -53,7 +53,7 @@ export const omitDeepBy: OmitDeepBy = (object: any, cb: any) => {
     }>(object)) {
       (temp as any)[key] = omitDeepBy(value, cb);
     }
-    return omitBy(temp, cb);
+    return lodash.omitBy(temp, cb);
   }
 
   return omitByDeepByOnOwnProps(object);

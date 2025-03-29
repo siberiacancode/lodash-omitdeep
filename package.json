@@ -35,7 +35,7 @@
     "import": "./dist/esm/index.mjs",
     "require": "./dist/cjs/index.cjs"
   },
-  "main": "dist/cjs/index.mjs",
+  "main": "dist/cjs/index.cjs",
   "module": "dist/esm/index.mjs",
   "types": "dist/types/index.d.ts",
   "files": [
