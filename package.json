@@ -1,7 +1,7 @@
 {
   "name": "lodash-omitdeep",
   "type": "module",
-  "version": "1.5.3",
+  "version": "1.6.1",
   "description": "lodash omitDeep/omitByDeep object key/value recursively",
   "author": {
     "name": "SIBERIA CAN CODE 🧊",
@@ -39,9 +39,10 @@
   "module": "dist/esm/index.mjs",
   "types": "dist/types/index.d.ts",
   "files": [
-    "dist/**/*"
+    "dist"
   ],
   "scripts": {
+    "prepublishOnly": "yarn unit-test run && yarn build",
     "build": "shx rm -rf dist && vite build",
     "lint": "eslint . --fix",
     "type": "tsc --noEmit",
