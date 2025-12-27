@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "jsx": "react",
     "lib": ["dom", "es2021"],
     "module": "esnext",
     "moduleResolution": "node",
@@ -11,7 +10,11 @@
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "declaration": true,
+    "declarationDir": "dist/types",
+    "emitDeclarationOnly": true,
     "newLine": "lf",
+    "noEmit": false,
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
@@ -19,5 +22,6 @@
     "isolatedModules": true,
     "skipLibCheck": true
   },
+  "include": ["src/index.ts"],
   "exclude": ["dist", "node_modules"]
 }

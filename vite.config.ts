@@ -1,16 +1,9 @@
 import path from 'node:path';
 import { defineConfig } from 'vite';
-import dts from 'vite-plugin-dts';
 
 import pkg from './package.json';
 
 export default defineConfig({
-  plugins: [
-    dts({
-      entryRoot: 'src',
-      outDir: 'dist/types'
-    })
-  ],
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
