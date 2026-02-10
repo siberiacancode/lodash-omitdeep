@@ -31,19 +31,26 @@
   ],
   "sideEffects": false,
   "exports": {
-    "types": "./dist/types/index.d.ts",
-    "import": "./dist/esm/index.mjs",
-    "require": "./dist/cjs/index.cjs"
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.mts",
+        "default": "./dist/esm/index.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.cts",
+        "default": "./dist/cjs/index.cjs"
+      }
+    }
   },
   "main": "dist/cjs/index.cjs",
   "module": "dist/esm/index.mjs",
-  "types": "dist/types/index.d.ts",
+  "types": "dist/esm/index.d.mts",
   "files": [
     "dist"
   ],
   "scripts": {
     "prepublishOnly": "yarn unit-test run && yarn build",
-    "build": "shx rm -rf dist && vite build && tsc",
+    "build": "tsdown",
     "lint": "eslint . --fix",
     "type": "tsc --noEmit",
     "format": "prettier --write .",
@@ -55,10 +62,11 @@
     "lodash": "^4"
   },
   "dependencies": {
-    "lodash": "^4"
+    "lodash": "^4",
+    "tsdown": "^0.20.3"
   },
   "devDependencies": {
-    "@siberiacancode/eslint": "^2.15.1",
+    "@siberiacancode/eslint": "^2.15.2",
     "@siberiacancode/prettier": "^1.6.0",
     "@siberiacancode/vitest": "^2.3.0",
     "@types/lodash": "^4.17.23",
@@ -66,9 +74,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "shx": "^0.4.0",
-    "typescript": "^5.9.3",
-    "vite": "^7.3.1",
-    "vite-plugin-dts": "^4.5.4"
+    "typescript": "^5.9.3"
   },
   "lint-staged": {
     "*.{js,ts}": [
