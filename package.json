@@ -65,15 +65,15 @@
     "lodash": "^4"
   },
   "devDependencies": {
-    "@siberiacancode/eslint": "^2.15.2",
-    "@siberiacancode/prettier": "^1.6.1",
+    "@siberiacancode/eslint": "^2.17.0",
+    "@siberiacancode/prettier": "^1.7.0",
     "@siberiacancode/vitest": "^2.4.1",
     "@types/lodash": "^4.17.24",
-    "@types/node": "^25.3.2",
+    "@types/node": "^25.9.1",
     "husky": "^9.1.7",
-    "lint-staged": "^16.2.7",
-    "tsdown": "^0.20.3",
-    "typescript": "^5.9.3"
+    "lint-staged": "^17.0.5",
+    "tsdown": "^0.22.1",
+    "typescript": "^6.0.3"
   },
   "lint-staged": {
     "*.{js,ts}": [

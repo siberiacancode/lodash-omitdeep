@@ -28,6 +28,7 @@ $ yarn add lodash-omitdeep
 
 ```js
 import { omitDeep } from 'lodash-omitdeep';
+
 omitDeep({ a: 'a', b: 'b', c: { b: 'b', d: { b: 'b', f: 'f' } } }, 'b');
 //=> {a: "a", c: {d: {f: "f"}}}
 omitDeep({ a: 'a', b: 'b', c: { b: 'b', d: { b: 'b', f: 'f' } } }, ['a', 'b']);
