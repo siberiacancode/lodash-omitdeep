@@ -1,0 +1,7 @@
+extends:
+  - node_modules/@siberiacancode/lefthook/dist/lefthook.yml
+
+pre-commit:
+  jobs:
+    - name: unit-test
+      run: pnpm exec vitest run

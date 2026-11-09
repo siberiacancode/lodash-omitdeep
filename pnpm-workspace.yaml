@@ -1,0 +1,13 @@
+allowBuilds:
+  esbuild: true
+  lefthook: true
+
+minimumReleaseAgeExclude:
+  - '@siberiacancode/eslint@2.19.1'
+  - '@siberiacancode/prettier@1.10.1'
+
+publicHoistPattern:
+  - eslint
+  - prettier
+  - lefthook
+  - vitest
