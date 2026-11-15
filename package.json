@@ -53,7 +53,7 @@
     "build": "tsdown",
     "lint": "eslint . --fix",
     "type": "tsc --noEmit",
-    "format": "prettier --write .",
+    "format": "oxfmt",
     "pretty": "yarn type && yarn lint && yarn format",
     "prepare": "lefthook install",
     "unit-test": "vitest"
@@ -67,17 +67,11 @@
   "devDependencies": {
     "@siberiacancode/eslint": "^2.19.1",
     "@siberiacancode/lefthook": "^1.0.2",
-    "@siberiacancode/prettier": "^1.10.1",
+    "@siberiacancode/oxfmt": "^1.0.0",
     "@siberiacancode/vitest": "^2.6.0",
     "@types/lodash": "^4.17.27",
     "@types/node": "^26.6.6",
     "tsdown": "^0.23.7",
     "typescript": "^6.0.3"
-  },
-  "lint-staged": {
-    "*.{js,ts}": [
-      "eslint --fix",
-      "prettier --write"
-    ]
   }
 }

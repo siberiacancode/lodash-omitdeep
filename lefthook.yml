@@ -3,5 +3,11 @@ extends:
 
 pre-commit:
   jobs:
+    - name: format
+      skip: true
+    - name: oxfmt
+      glob: '*.{js,jsx,mjs,cjs,ts,tsx,mts,cts,json,jsonc,md,yml,yaml,css,scss,html}'
+      run: pnpm exec oxfmt {staged_files}
+      stage_fixed: true
     - name: unit-test
       run: pnpm exec vitest run
